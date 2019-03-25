@@ -51,7 +51,7 @@ result = [numbers[i] for i in range(1, len(numbers))
 i = 1
 result = 0
 while i < len(numbers)+1:
-    if numbers[i] / numbers[i-1] > 0: # Рано или поздно выловишь что на ноль делить незя
+    if numbers[i] * numbers[i-1] >= 0:
         result = numbers[i] + numbers[i-1]
         break
     i += 1
