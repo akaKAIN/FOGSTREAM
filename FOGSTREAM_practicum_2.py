@@ -78,19 +78,16 @@ else:
 
 
 # ------------------------------ Задача 13
-grades = []
 result = []
-
+grades = []
 # создаем список с оценками студентов
 for student in students:
     grades.append(student['grade'])
-
-# Выбрасываем минимальную оценку.Теперь минимальныя=предпоследней.
-grades.remove(min(grades))
-
-# Добавление в пустой список имен, чьи оценки равны минимальным=предпосл.
+grade_list = [x for x in set(grades)]
+grade_list.sort()
+# Добавление в пустой список имен, чьи оценки равны предпоследней в списке оценок.
 for student in students:
-    if student['grade'] == min(grades):
+    if student['grade'] == grade_list[1]:
         result.append(student['name'])
 
 
