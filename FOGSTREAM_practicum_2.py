@@ -48,11 +48,11 @@ result = [numbers[i] for i in range(1, len(numbers))
 
 
 # ------------------------------ Задача 9
-i = 1
+i = 0
 result = 0
-while i < len(numbers)+1:
-    if numbers[i] * numbers[i-1] >= 0:
-        result = numbers[i] + numbers[i-1]
+while i < len(numbers)-2:
+    if numbers[i] * numbers[i+1] > 0:
+        result = numbers[i] + numbers[i + 1]
         break
     i += 1
 
@@ -62,19 +62,22 @@ result = max(numbers) + numbers.index(max(numbers))
 
 
 # ------------------------------ Задача 11
-result = [x for x in set(numbers)]
+numbers.sort()
+result = [number for number in numbers if numbers.count(number) == 1]
 
 
 # ------------------------------ Задача 12
-# Т.к. искомого number нет в списке (что противоречит условию),
-# то блок "if" чуток громоздкий.
-if number not in numbers:
-    numbers.append(number)
-    numbers.sort()
-    result = numbers.index(number)
-else:
+result = 0
+if number in numbers:
     result = numbers.index(number) + 1
     numbers.insert(result, number)
+else:
+    i = len(numbers)-1
+    while True:
+        i -= 1
+        if numbers[i] < number:
+            result = numbers.index(numbers[i]) + 1
+            break
 
 
 # ------------------------------ Задача 13
