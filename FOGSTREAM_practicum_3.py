@@ -111,9 +111,7 @@ import re
 def validate(email):
     email = email.lower()
     email_regex = re.compile(r'([0-9a-z_-]+)@([0-9a-z]+)(\.[0-9a-z]{2,3}$)')
-    if email_regex.search(email) is None:
+    if email_regex.match(email) is None:
         return False
     else:
         return True
-
-
