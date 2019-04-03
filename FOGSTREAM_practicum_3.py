@@ -47,8 +47,6 @@ def stronger(scores):
 список и произвольную арифметическую функцию. Функция map должна возвращать новый список,
 элементы которого являются результатом функции func."""
 
-# def func(x):
-#     return x**2
 
 def map(array, func):
     return [func(element) for element in array]
@@ -64,7 +62,7 @@ def map(array, func):
     #
     # for key, value in enumerate(array):
     #     array[key] = func(value)
-    #     return array
+    # return array
 
 # print(map([1,2,3,4,5], func))
 
@@ -91,9 +89,6 @@ def reduce(array, func, init=0):
         i += 1
     return init
 
-def reduce_recurs(array, func, init=0):
-    if init == 0:
-        return
 
 
 # -------------------- Задание № 6
@@ -108,6 +103,7 @@ def reduce_recurs(array, func, init=0):
 4. Максимальная длина extension 3 символа."""
 
 import re
+
 def validate(email):
     email = email.lower()
     email_regex = re.compile(r'([0-9a-z_-]+)@([0-9a-z]+)(\.[0-9a-z]{2,3}$)')
