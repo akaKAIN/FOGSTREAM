@@ -48,7 +48,7 @@ class Triangle(Figure):
         return Figure.area_triangle(self)
 
     def perimeter(self):
-        return Figure.area_triangle(self)
+        return Figure.perimeter_triangle(self)
 
 
 class Rectangle(Figure):
