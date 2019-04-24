@@ -87,7 +87,6 @@ with open('filename', 'r', encoding='utf-8') as file:
 # outfilename - хранит в себе имя файла результата
 
 import re
-import pprint
 
 dict_letters = {}
 pattern_letter = (r"[a-zA-Z]")
